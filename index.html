@@ -105,17 +105,11 @@
       z-index:50;
     }
     .header-main{height:72px;display:flex;align-items:center;justify-content:space-between;gap:20px}
-    .brand{display:flex;align-items:center;gap:14px;min-width:0}
-    .logo-box{
-      width:48px;height:48px;border:2px solid #ffffff;border-radius:50%;
-      display:grid;place-items:center;flex:0 0 auto;
-      background:#ffffff;
-      box-shadow:0 4px 14px rgba(0,0,0,.18);
-      padding:3px;overflow:hidden;
-    }
-    .logo-img{
-      width:100%;height:100%;object-fit:contain;display:block;
-    }
+    .brand{display:flex;align-items:center;gap:16px;min-width:0}
+    .brand-logos{display:flex;align-items:center;gap:10px;flex:0 0 auto}
+    .brand-logo-uns{height:50px;width:auto;display:block}
+    .brand-logo-dikti{height:38px;width:auto;display:block}
+    .brand-divider{width:1px;height:36px;background:rgba(255,255,255,.35);flex:0 0 auto}
     .brand-copy{min-width:0}
     .brand-copy strong{display:block;font-size:15px;line-height:1.15;letter-spacing:.01em;font-weight:800}
     .brand-copy span{display:block;font-size:10.5px;opacity:.92;margin-top:3px}
@@ -386,14 +380,13 @@
     footer{background:var(--footer);color:#fff;border-top:5px solid var(--uns-yellow);padding:44px 0 22px}
     .footer-portals{display:grid;grid-template-columns:repeat(5,1fr);gap:18px;padding-bottom:32px;border-bottom:1px solid #2D3748}
     .portal{font-size:20px;font-weight:950;color:#F5F5F5;letter-spacing:-.02em;transition:.15s ease}.portal:hover{color:var(--uns-yellow)}
-    .portal small{display:block;font-size:8.5px;color:#A0AEC0;margin-top:3px;letter-spacing:.04em;font-weight:600}
+    .portal.is-home{color:var(--uns-yellow)}
+    .portal small{display:block;font-size:8.5px;color:#A0AEC0;margin-top:3px;letter-spacing:.04em;font-weight:600;text-transform:uppercase}
     .foot-grid{display:grid;grid-template-columns:1.4fr .8fr .8fr;gap:48px;padding:36px 0 24px}
     .foot-brand{display:flex;align-items:center;gap:12px;margin-bottom:14px}
-    .foot-mark{width:50px;height:50px;border:2px solid #ffffff;border-radius:50%;display:grid;place-items:center;background:#ffffff;padding:3px;flex:0 0 auto;box-shadow:0 4px 12px rgba(0,0,0,.15);overflow:hidden}
-    .foot-brand strong{font-size:18px;line-height:1.1;font-weight:800}.foot-text{font-size:10.5px;color:#CBD5E0;max-width:440px;line-height:1.6}.foot-title{font-size:13px;font-weight:900;margin-bottom:12px;color:var(--uns-yellow)}.foot-links{display:grid;gap:8px;font-size:11px;color:#E2E8F0}.foot-links a:hover{color:var(--uns-yellow)}
-    .social-links{display:flex;gap:10px;margin-top:14px}
-    .social-icon{width:32px;height:32px;border-radius:50%;background:rgba(255,255,255,.1);display:grid;place-items:center;font-size:12px;color:#fff;transition:.15s ease}
-    .social-icon:hover{background:var(--uns-yellow);color:#142B3B}
+    .foot-mark{height:52px;display:flex;align-items:center;flex:0 0 auto}
+    .foot-logo-img{height:60px;width:auto;object-fit:contain;display:block}
+    .foot-text{font-size:10.5px;color:#CBD5E0;max-width:440px;line-height:1.6}.foot-title{font-size:13px;font-weight:900;margin-bottom:12px;color:var(--uns-yellow)}.foot-links{display:grid;gap:8px;font-size:11px;color:#E2E8F0}.foot-links a:hover{color:var(--uns-yellow)}
     .copyright{text-align:center;border-top:1px solid #2D3748;padding-top:18px;font-size:10px;color:#94A3B8}
 
     .mobile-cta{display:none;position:fixed;left:12px;right:12px;bottom:12px;z-index:100;background:var(--uns-yellow);color:#142B3B;border-radius:8px;padding:13px 16px;text-align:center;font-weight:900;font-size:13px;box-shadow:0 14px 35px rgba(0,0,0,.3)}
@@ -452,7 +445,7 @@
       .header-main{height:68px;gap:12px}
       .header-search{display:none}
       .brand-copy strong{font-size:13.5px}.brand-copy span{font-size:9.5px}
-      .logo-box{width:44px;height:44px;font-size:14px}
+      .brand-logos{gap:10px}.brand-logo-uns{height:32px}.brand-logo-dikti{height:24px}.brand-divider{height:24px}
       .program-name{font-size:11.5px}.nav-cta{font-size:10px;padding:6px 12px}
       .hero-inner{padding:38px 0 46px}.hero h1{font-size:30px}.hero p{font-size:14px}.hero-actions{display:grid;width:100%}.btn{width:100%}
       .accredit-row{grid-template-columns:1fr;gap:4px}.accredit-period{grid-template-columns:1fr}
@@ -500,9 +493,11 @@
   <header class="site-header">
     <div class="container header-main">
       <a class="brand" href="#top" aria-label="Pascasarjana FKIP UNS">
-        <div class="logo-box">
-          <img src="logounsnobg.png" alt="Logo UNS" class="logo-img">
+        <div class="brand-logos">
+          <img src="logo-uns.png" alt="Logo Universitas Sebelas Maret" class="brand-logo-uns">
+          <img src="Puith_Horizontal Logo.png" alt="Logo Diktisaintek Berdampak" class="brand-logo-dikti">
         </div>
+        <span class="brand-divider" aria-hidden="true"></span>
         <div class="brand-copy">
           <strong>PASCASARJANA FKIP UNS</strong>
           <span>Universitas Sebelas Maret · Surakarta</span>
@@ -1108,30 +1103,21 @@
   <footer>
     <div class="container">
       <div class="footer-portals">
-        <a class="portal" href="https://spmb.uns.ac.id/" target="_blank" rel="noopener">SPMB UNS<small>Pendaftaran Mahasiswa Baru</small></a>
-        <a class="portal" href="https://fkip.uns.ac.id/" target="_blank" rel="noopener">FKIP UNS<small>Fakultas Keguruan & Ilmu Pendidikan</small></a>
-        <a class="portal" href="https://expert.uns.ac.id/" target="_blank" rel="noopener">EXPERT UNS<small>Portal Kepakaran Dosen</small></a>
-        <a class="portal" href="https://uns.ac.id/id/" target="_blank" rel="noopener">UNS PORTAL<small>Universitas Sebelas Maret</small></a>
-        <a class="portal" href="https://s3pbi.fkip.uns.ac.id/" target="_blank" rel="noopener">S3 PBI UNS<small>Program Studi S3 Pendidikan Bahasa Indonesia</small></a>
+        <a class="portal is-home" href="https://uns.ac.id/id/" target="_blank" rel="noopener">UNS<small>Universitas Sebelas Maret</small></a>
+        <a class="portal" href="https://fkip.uns.ac.id/" target="_blank" rel="noopener">FKIP<small>Fakultas Keguruan dan Ilmu Pendidikan</small></a>
+        <a class="portal" href="https://spmb.uns.ac.id/" target="_blank" rel="noopener">SPMB<small>Penerimaan Mahasiswa Baru</small></a>
+        <a class="portal" href="https://expert.uns.ac.id/" target="_blank" rel="noopener">EXPERT<small>Portal Kepakaran UNS</small></a>
+        <a class="portal" href="https://s3pbi.fkip.uns.ac.id/" target="_blank" rel="noopener">S3PBI<small>S3 Pendidikan Bahasa Indonesia</small></a>
       </div>
 
       <div class="foot-grid">
         <div>
           <div class="foot-brand">
             <div class="foot-mark">
-              <img src="logounsnobg.png" alt="Logo UNS" class="logo-img">
-            </div>
-            <div>
-              <strong>PASCASARJANA FKIP UNS</strong>
-              <div style="font-size:11px;opacity:.8">Program Studi S3 Pendidikan Bahasa Indonesia</div>
+              <img src="logo-uns.png" alt="Logo Universitas Sebelas Maret" class="foot-logo-img">
             </div>
           </div>
-          <p class="foot-text">Jl. Ir. Sutami No. 36A, Kentingan, Surakarta, Jawa Tengah 57126. Gedung Pascasarjana FKIP Universitas Sebelas Maret. Terakreditasi UNGGUL oleh LAMDIK & BAN-PT.</p>
-          <div class="social-links">
-            <a class="social-icon" href="https://s3pbi.fkip.uns.ac.id/" target="_blank" rel="noopener" aria-label="Website S3 PBI UNS">🌐</a>
-            <a class="social-icon" href="https://instagram.com/s3pbiuns" target="_blank" rel="noopener" aria-label="Instagram S3 PBI UNS">📷</a>
-            <a class="social-icon" href="mailto:s3pbi@fkip.uns.ac.id" aria-label="Email S3 PBI UNS">✉️</a>
-          </div>
+          <p class="foot-text">Program Studi S3 Pendidikan Bahasa Indonesia · Pascasarjana Fakultas Keguruan dan Ilmu Pendidikan (FKIP) Universitas Sebelas Maret.<br>Jl. Ir. Sutami 36A Kentingan, Jebres, Surakarta, Jawa Tengah 57126.</p>
         </div>
 
         <div>
@@ -1160,7 +1146,7 @@
       </div>
 
       <div class="copyright">
-        © 2026 Program Studi S3 Pendidikan Bahasa Indonesia · Pascasarjana FKIP Universitas Sebelas Maret (UNS) Surakarta. All Rights Reserved.
+        Copyright © 2026 Pascasarjana FKIP Universitas Sebelas Maret
       </div>
     </div>
   </footer>
