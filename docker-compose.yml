@@ -1,0 +1,13 @@
+services:
+  web:
+    image: alphabloo7/s3-pend-bahasa-indonesia:latest
+    container_name: s3-pend-bahasa-indonesia-web
+    restart: always
+    ports:
+      - "8092:80" # Ubah port 8092 jika port tersebut sudah terpakai di server VPS Anda (misal: 8086 atau 8092)
+    healthcheck:
+      test: ["CMD", "curl", "-fsS", "http://localhost/healthz"]
+      interval: 30s
+      timeout: 5s
+      retries: 3
+      start_period: 5s
