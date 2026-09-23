@@ -120,8 +120,6 @@
     }
     .header-search span{flex:1;color:#7B8791;font-size:11px;display:flex;align-items:center;padding:0 12px}
     .header-search b{width:38px;display:grid;place-items:center;background:#0C8FC5;color:#fff;font-size:14px}
-    .header-search.search-pulse{animation:searchPulse 1s ease 2}
-    @keyframes searchPulse{0%,100%{box-shadow:inset 0 0 0 1px rgba(0,0,0,.08)}50%{box-shadow:inset 0 0 0 1px rgba(0,0,0,.08),0 0 0 5px rgba(255,199,0,.55)}}
 
     /* --- Hero Section --- */
     .hero{
@@ -505,7 +503,7 @@
           <span>Universitas Sebelas Maret · Surakarta</span>
         </div>
       </a>
-      <a class="header-search" id="headerSearchBox" href="#facultySearch" aria-label="Cari kepakaran di Expert UNS">
+      <a class="header-search" href="#facultySearch" aria-label="Cari kepakaran di Expert UNS">
         <span>Cari dosen / bidang kepakaran...</span><b>⌕</b>
       </a>
     </div>
@@ -903,7 +901,7 @@
         </div>
 
         <div class="faculty-cta">
-          <a class="btn btn-blue" href="#facultySearch" id="expertCtaBtn">TELUSURI DOSEN DI EXPERT UNS ↗</a>
+          <a class="btn btn-blue" href="https://expert.uns.ac.id/researchers?fakultas%5B%5D=0106" target="_blank" rel="noopener">TELUSURI DOSEN DI EXPERT UNS ↗</a>
         </div>
       </div>
     </section>
@@ -1213,20 +1211,6 @@
           e.preventDefault();
           searchInput.scrollIntoView({ behavior: 'smooth', block: 'center' });
           setTimeout(() => searchInput.focus(), 500);
-        });
-      }
-
-      // 4. "Telusuri Dosen di Expert UNS" button redirect to header search field
-      const expertCtaBtn = document.getElementById('expertCtaBtn');
-      const headerSearchBox = document.getElementById('headerSearchBox');
-      if (expertCtaBtn && headerSearchBox) {
-        expertCtaBtn.addEventListener('click', (e) => {
-          e.preventDefault();
-          headerSearchBox.scrollIntoView({ behavior: 'smooth', block: 'center' });
-          headerSearchBox.classList.remove('search-pulse');
-          void headerSearchBox.offsetWidth;
-          headerSearchBox.classList.add('search-pulse');
-          setTimeout(() => headerSearchBox.classList.remove('search-pulse'), 2000);
         });
       }
     });
